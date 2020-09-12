@@ -1,0 +1,10 @@
+{
+    "list-trad": "Liste des Traductions",
+    "menu": {
+        "items": {
+            "list": "Liste des Traductions",
+            "new": "Nouvelle Traduction",
+            "user": "Utilisateur"
+        }
+    }
+}
