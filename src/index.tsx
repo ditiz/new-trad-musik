@@ -1,13 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import HandlerApp from "./app/HandlerApp";
+import Auth from "./app/Auth";
 import "./i18n";
-import "./index.css";
+import "./index.less";
 import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
   <React.StrictMode>
-    <HandlerApp />
+    <Auth />
   </React.StrictMode>,
   document.getElementById("root")
 );

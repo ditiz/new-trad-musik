@@ -1,4 +1,4 @@
-import { Button, Card, Layout, PageHeader } from "antd";
+import { Button, Card, Layout } from "antd";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
@@ -8,9 +8,9 @@ const List = () => {
   const { t } = useTranslation();
 
   return (
-    <Header>
+    <>
       <Header>
-        <PageHeader title={t("list-trad")} />
+        <h1 style={{ color: "#FFF" }}>{t("list-trad")}</h1>
       </Header>
       <Content>
         <Card
@@ -22,7 +22,7 @@ const List = () => {
         </Card>
       </Content>
       <Footer>Footer</Footer>
-    </Header>
+    </>
   );
 };
 

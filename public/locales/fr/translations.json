@@ -6,5 +6,22 @@
             "new": "Nouvelle Traduction",
             "user": "Utilisateur"
         }
+    },
+    "login": {
+        "username": "Nom",
+        "email": "Email",
+        "password": "Mot de passe",
+        "submit": "Se connecter",
+        "forgot-password": "Mot de passe oublié",
+        "register": "Créer un compte",
+        "no-username": "Entrer votre nom!",
+        "no-email": "Entrer votre Email!",
+        "no-password": "Entrer votre mot de passe!",
+        "login-anonymously": "Se connecter anonymement",
+        "login-with-google": "Se connecter avec Google",
+        "login": "Se connecter",
+        "register-success": "Votre compte a bien été créer",
+        "register-fail": "Il y a eu une erreur dans la création de votre compte",
+        "submit-create": "Créer le compte"
     }
 }

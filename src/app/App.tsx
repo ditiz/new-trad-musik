@@ -2,7 +2,7 @@ import { Layout } from "antd";
 import React, { useState } from "react";
 import { Route, Switch } from "react-router-dom";
 import "../i18n";
-import "./App.css";
+import "./App.less";
 import List from "./Traduction/List";
 import SideMenu from "./Traduction/SubMenu";
 
