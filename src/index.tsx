@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Auth from "./app/Auth";
 import ProviderApp from "./app/ProviderApp";
 import "./i18n";
 import "./index.less";
