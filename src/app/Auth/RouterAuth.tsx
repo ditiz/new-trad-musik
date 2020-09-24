@@ -1,37 +1,45 @@
 import { FirebaseAuthConsumer } from "@react-firebase/auth";
-import { Card } from "antd";
+import { Card, Divider } from "antd";
 import React from "react";
+import { useSelector } from "react-redux";
 import { Route, Switch } from "react-router-dom";
 import Login from "./Login";
 import Register from "./Register";
 
 const RouterAuth = () => {
+  const state = useSelector((state) => state);
+
   return (
-    <Switch>
-      <Route path="/Register">
-        <Register />
-      </Route>
-
-      <Route path="/Login">
-        <Login />
-      </Route>
-
-      <Route path="/">
-        <Login />
-      </Route>
-
+    <>
       <Card>
         <FirebaseAuthConsumer>
           {({ isSignedIn, user, providerId }) => {
             return (
-              <pre style={{ height: 300, overflow: "auto" }}>
-                {JSON.stringify({ isSignedIn, user, providerId }, null, 2)}
-              </pre>
+              <>
+                <pre>
+                  {JSON.stringify({ isSignedIn, user, providerId }, null, 2)}
+                </pre>
+                <Divider />
+                <pre>{JSON.stringify(state)}</pre>
+              </>
             );
           }}
         </FirebaseAuthConsumer>
       </Card>
-    </Switch>
+      <Switch>
+        <Route path="/Register">
+          <Register />
+        </Route>
+
+        <Route path="/Login">
+          <Login />
+        </Route>
+
+        <Route path="/">
+          <Login />
+        </Route>
+      </Switch>
+    </>
   );
 };
 

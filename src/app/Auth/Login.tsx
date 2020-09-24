@@ -1,14 +1,16 @@
 import { Button, Card, Divider, Form, Input } from "antd";
 import firebase from "firebase";
-import React from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { reducerActions } from "../actions/action";
 import OtherLogin from "./OtherLogin";
 
 const Login = () => {
   const { t } = useTranslation();
 
-  // const [userData, setUserData] = useState({});
+  const dispatch = useDispatch();
 
   const onFinish = (values: { [x: string]: any }) => {
     const { email, password } = values;
@@ -17,11 +19,23 @@ const Login = () => {
       .auth()
       .signInWithEmailAndPassword(email, password)
       .then((res) => {
-        console.log("success", res);
+        if (res.user) {
+          const { uid, email, emailVerified, isAnonymous } = res.user;
+
+          dispatch({
+            type: reducerActions.SET_USER,
+            userData: {
+              uid,
+              email,
+              emailVerified,
+              isAnonymous,
+            },
+          });
+        }
       })
       .catch(function (error) {
         // Handle Errors here.
-        const { code, message } = error.code;
+        const { code, message } = error;
 
         console.log("error", code, message);
       });
